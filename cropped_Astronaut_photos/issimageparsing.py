@@ -7,7 +7,7 @@ def transformCoord(coordinates):
 
 imgs = os.listdir()
 for f in imgs:
-    if (f.find(".jpg") != -1):
+    if (f.find(".jpeg") != -1):
         image = face_recognition.load_image_file(f)
         face_locations = face_recognition.face_locations(image)
 
