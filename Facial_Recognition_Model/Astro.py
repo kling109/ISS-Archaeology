@@ -1,5 +1,6 @@
 import face_recognition
 import pickle
+
 class astro:
     fName = ""
     lName = ""
@@ -24,13 +25,16 @@ class astro:
         tempDict[self.filename] = self.facialData
         with open("{0}{1}.dat".format(filePath, self.filename), 'wb') as f:
             pickle.dump(tempDict, f)
-
             
     def loadData(self, filePath = ""):
         tempDict = {}
         with open("{0}{1}.dat".format(filePath, self.filename), 'rb') as f:
            tempDict = pickle.load(f)
-        facialData = tempDict[self.filename]
+        self.facialData = tempDict[self.filename]
     
-    def checkFace(self, faceEncoding):
-        return face_recognition.compare_faces([self.facialData], faceEncoding)
+    def checkFace(self, listOfAstronauts):
+        FoundAstronauts = []
+        
+        for face in listOfAstronauts:
+            FoundAstronauts.append(face_recognition.compare_faces([self.facialData], face))
+        return FoundAstronauts
