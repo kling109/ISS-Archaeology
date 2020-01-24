@@ -4,6 +4,8 @@ import face_recognition
 import os
 import re
 import numpy as np
+import multiprocessing as mp
+from multiprocessing import Process
 
 #Just a helper method, carry on...
 def getDir(filePath:str):
@@ -27,7 +29,7 @@ class Master_Model:
         """Class constructor for Main_Model.
 
         PARAM: train_dir:str = directory containing pictures of all astronauts to be added to model. Picture files must follow the following naming convention: 
-                \<first name>_[<middle name>_]<last name>&<nationality>.jpg
+                <first name>_[<middle name>_]<last name>&<nationality>.jpg
 
             astro_pickle_dir:str = Directory in which face_recognition model objects will be flattened and saved as .dat files. Note that any .dat files in this directory will be added to model
 
@@ -44,11 +46,23 @@ class Master_Model:
 
         Param: train_dir: Directory in which all images to be trained on are stored. Images must follow this naming convention:
                 <first name>_[<middle name>_]<last name>&<nationality>.jpg"""
+        semaphore = mp.Semaphore(self.num_threads)
+        processes = []
+        lock = mp.Lock()
         for filename in os.listdir(train_dir):
+            semaphore.acquire()
+            lock.acquire()
             print("Training on image:", filename)
-            self.addAstro("{0}{1}".format(train_dir,filename)) 
+            lock.release()
+            p = Process(target = self.addAstro, args = ("{0}{1}".format(train_dir,filename), semaphore,lock))
+            processes.append(p)
+            p.start()
+        for proc in processes:
+            proc.join()
             
-    def addAstro(self,astronaut):
+
+            
+    def addAstro(self,astronaut,sem:mp.Semaphore, lock:mp.Lock):
         """File adds given astronaut object or picture to model.
         
         Parameter:
@@ -60,15 +74,19 @@ class Master_Model:
         if type(astronaut) == str:
             a = self.astroInit(astronaut)
             if(a==None):
+               sem.release() 
                return
             if a.filename in self.known_faces:
+                lock.acquire()
                 print("\tModel has already been trained on",astronaut)
+                lock.release()
+                sem.release()
                 return
-            a.trainModel(astronaut)
-            print(type(a.facialData))
+            a.trainModel(astronaut,lock)
             if type(a.facialData) == np.ndarray:
                 a.saveData(self.astro_pickle_dir)
                 self.known_faces[a.filename] = a.facialData
+            sem.release()
 
     def addAstros(self, astros:list):
         """Same behavior as addAstro, but works on a list of filepaths or astronaut objects"""

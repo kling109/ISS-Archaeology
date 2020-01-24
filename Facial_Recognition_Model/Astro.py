@@ -1,5 +1,6 @@
 import face_recognition
 import pickle
+import multiprocessing as mp
 
 class Astronaut:
     
@@ -11,13 +12,15 @@ class Astronaut:
         self.facialData = None
         self.filename = "{0}_{1}&{2}".format(fName, lName, country)
         
-    def trainModel(self, imageFilepath):
+    def trainModel(self, imageFilepath, lock:mp.Lock):
         known = face_recognition.load_image_file(imageFilepath)
         try:
-            self.facialData = face_recognition.face_encodings(known)[0]
+            self.facialData = face_recognition.face_encodings(known,num_jitters=5)[0]
         except IndexError:
+            lock.acquire()
             print("\t ERROR: No faces found in: ",imageFilepath)
             print("\t File will be ignored")
+            lock.release()
     
     def saveData(self, filePath = ""):
         tempDict = {}
