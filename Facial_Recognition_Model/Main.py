@@ -5,4 +5,5 @@ if __name__ == '__main__':
     model.findFacesDir("../Test/")
     print("5")
     d = model.found_faces
-    print(d)
+    for k,v in d.items():
+        print(k,"matched with:",v)
