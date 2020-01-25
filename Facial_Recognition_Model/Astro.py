@@ -2,6 +2,8 @@ import face_recognition
 import pickle
 import multiprocessing as mp
 
+
+
 class Astronaut:
     
     def __init__(self, country: str, fName : str, lName : str, mName  = ""):
@@ -39,6 +41,12 @@ class Astronaut:
     def checkFace(self, listOfAstronauts):
         FoundAstronauts = []
         for face in listOfAstronauts:
-            print(type(self.facialData))
             FoundAstronauts.append(face_recognition.compare_faces([self.facialData], face)[0])
+        return FoundAstronauts
+
+    def faceDistance(self, listOfAstronauts):
+        FoundAstronauts = []
+        for face in listOfAstronauts:
+            print(type(self.facialData))
+            FoundAstronauts.append(face_recognition.face_distance([self.facialData], face)[0])
         return FoundAstronauts
