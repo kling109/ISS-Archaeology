@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Imports  -->
+    <div>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--    -->
+
+        <!-- JQuery-->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <!--    -->
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </div>
+    </head>
+    <body onkeypress="return myFunction(event)" onload="fnChangeImage();">
+
+    <script language="JavaScript">
+        var sexDict = {}
+        var m = 109, n = 110, space = 32, u = 117;
+        var source = "./ISS_Astronaut_photos/";
+        var images = [
+            "akihiko_hoshide&japan.jpg",
+            "alan_pointdexter&usa.jpg",
+            "aleksandr_kaleri&russia.jpg",
+            "aleksandr_misurkin&russia.jpg",
+            "aleksandr_samokutyayev&russia.jpg",
+            "aleksandr_skvortsov&russia.jpg",
+            "aleksey_ovchinin&russia.jpg",
+            "alexander_gerst&germany.jpg",
+            "ames_newman&usa.jpg",
+            "anatoli_ivanishin&russia.jpg",
+            "andre_kuipers&netherlands.jpg",
+            "andreas_mogensen&denmark.jpg",
+            "andrei_borisenko&russia.jpg",
+            "andrew_feustel&usa.jpg",
+            "andrew_morgan&usa.jpg",
+            "anne_mcclain&usa.jpg",
+            "anousheh_ansari&usa.jpg",
+            "anton_shkaplerov&russia.jpg",
+            "aydyn_aimbetov&kazakhstan.jpg",
+            "barbara_morgan&usa.jpg",
+            "benjamin_drew&usa.jpg",
+            "boris_morukov&russia.jpg",
+            "borothy_metcalf-lindenburger&usa.jpg",
+            "brent_jett&usa.jpg",
+            "brian_duffy&usa.jpg",
+            "carl_walz&usa.jpg",
+            "carlos_noriega&usa.jpg",
+            "catherine_coleman&usa.jpg",
+            "charles_camarda&usa.jpg",
+            "charles_hobaugh&usa.jpeg",
+            "charles_simonyi&usa.jpg",
+            "chris_hadfield&canada.jpg",
+            "christer_fuglesang&sweden.jpg",
+            "christina_koch&usa.jpg",
+            "christopher_cassidy&usa.jpg",
+            "christopher_ferguson&usa.jpg",
+            "claudie_haignere&france.jpg",
+            "clayton_anderson&usa.jpg",
+            "dafydd_williams&canada.jpg",
+            "daniel_barry&usa.jpg",
+            "daniel_burbank&usa.jpg",
+            "daniel_bursch&usa.jpg",
+            "daniel_tani&usa.jpg",
+            "david_saint-jacques&canada.jpg",
+            "david_wolf&usa.jpg",
+            "dennis_tito&usa.jpg",
+            "dmitri_kondratyev&russia.jpg",
+            "dominic_antonelli&usa.jpg",
+            "dominic_gorie&usa.jpg",
+            "donald_pettit&usa.jpg",
+            "douglas_hurley&usa.jpg",
+            "douglas_wheelock&usa.jpg",
+            "edward_fincke&usa.jpg",
+            "edward_lu&usa.jpg",
+            "eileen_collins&usa.jpg",
+            "ellen_ochoa&usa.jpg",
+            "eric_boe&usa.jpg",
+            "evgeny_tarelkin&russia.jpg",
+            "filerename.py",
+            "frank_culbertson&usa.jpg",
+            "frank_winne&belgium.jpg",
+            "franklin_chang-diaz&usa.jpg",
+            "frederick_sturckow&usa.jpg",
+            "fyodor_yurchikhin&russia.jpeg",
+            "garrett_reisman&usa.jpg",
+            "gennady_padalka&russia.jpg",
+            "george_zamka&usa.jpg",
+            "gregory_chamitoff&usa.jpg",
+            "gregory_johnson&usa.jpeg",
+            "gregory_olsen&usa.jpg",
+            "gregory_wiseman&usa.jpg",
+            "guy_laliberte&canada.jpg",
+            "hans_schlegel&germany.jpg",
+            "hazzaa_almansoori&united_arab_emirates.jpg",
+            "heidemarie_stefanyshyn-piper&usa.jpg",
+            "jack_fischer&usa.jpg",
+            "james_dutton&usa.jpg",
+            "james_halsell&usa.jpg",
+            "james_kelly&usa.jpg",
+            "james_reilly&usa.jpg",
+            "james_voss&usa.jpg",
+            "james_wetherbee&usa.jpg",
+            "janet_kavandi&usa.jpg",
+            "jeffrey_ashby&usa.jpg",
+            "jeffrey_williams&usa.jpeg",
+            "jerry_ross&usa.jpg",
+            "jessica_meir&usa.jpg",
+            "joan_higginbotham&usa.jpg",
+            "john_herrington&usa.jpg",
+            "john_olivas&usa.jpg",
+            "john_phillips&usa.jpg",
+            "jose_hernandez&usa.jpg",
+            "joseph_acaba&usa.jpg",
+            "joseph_tanner&usa.jpg",
+            "julie_payette&canda.jpg",
+            "karen_nyberg&usa.jpg",
+            "kate_rubins&usa.jpg",
+            "kathryn_hire&usa.jpg",
+            "kenneth_bowersox&usa.jpg",
+            "kenneth_cockrell&usa.jpg",
+            "kenneth_ham&usa.jpg",
+            "kent_rominger&usa.jpg",
+            "kevin_ford&usa.jpg",
+            "kimiya_yui&japan.jpg",
+            "kjell_lindgren&usa.jpg",
+            "koichi_wakata&japan.jpg",
+            "konstantin_kozeyev&russia.jpg",
+            "lee_archambault&usa.jpg",
+            "lee_morin&usa.jpg",
+            "leland_melvin&usa.jpg",
+            "leopold_eyharts&france.jpg",
+            "leroy_chiao&usa.jpg",
+            "linda_godwin&usa.jpg",
+            "lisa_nowak&usa.jpg",
+            "luca_parmitano&italy.jpg",
+            "maksim_surayev&russia.jpg",
+            "marc_garneau&canada.jpg",
+            "marcos_pontes&brazil.jpg",
+            "mark_hei&usa.jpg",
+            "mark_kelly&usa.jpg",
+            "mark_polansky&usa.jpg",
+            "mark_shuttleworth&south_africa.jpg",
+            "mary_weber&usa.jpg",
+            "michael_barratt&usa.jpg",
+            "michael_bloomfield&usa.jpg",
+            "michael_foale&usa.jpg",
+            "michael_foreman&usa.jpg",
+            "michael_fossum&usa.jpg",
+            "michael_gernhardt&usa.jpg",
+            "michael_good&usa.jpg",
+            "michael_hopkins&usa.jpg",
+            "michael_lopez-alegria&usa.jpg",
+            "mikhail_korniyenko&russia.jpg",
+            "mikhail_tyurin&russia.jpg",
+            "nancy_currie&usa.jpg",
+            "naoko_yamazaki&japan.jpg",
+            "nicholas_patrick&usa.jpg",
+            "nick_hague&usa.jpg",
+            "nicole_stott&usa.jpg",
+            "nikolai_budarin&russia.jpg",
+            "norishige_kanai&japan.jpg",
+            "oleg_artemyev&russia.jpg",
+            "oleg_kononenko&russia.jpg",
+            "oleg_kotov&russia.jpg",
+            "oleg_novitskiy&russia.jpg",
+            "oleg_skripochka&russia.jpg",
+            "pamela_melroy&usa.jpg",
+            "paolo_nespoli&italy.jpg",
+            "patrick_forrester&usa.jpg",
+            "paul_lockhart&usa.jpg",
+            "paul_richards&usa.jpg",
+            "pavel_vinogradov&russia.jpg",
+            "pedro_duque&spain.jpg",
+            "peggy_witson&usa.jpg",
+            "peter_wisoff&usa.jpg",
+            "philippe_perrin&france.jpg",
+            "piers_sellers&usa.jpg",
+            "randolph_bresnik&usa.jpg",
+            "rename.sh",
+            "rex_walheim&usa.jpg",
+            "richard_arnold&usa.jpeg",
+            "richard_garriott&usa.jpg",
+            "richard_linnehan&usa.jpg",
+            "richard_mastracchio&usa.jpg",
+            "rick_husband&usa.jpg",
+            "robert_behnken&usa.jpg",
+            "robert_cabana&usa.jpg",
+            "robert_curbeam&usa.jpg",
+            "robert_kimbrough&usa.jpg",
+            "robert_satcher&usa.jpg",
+            "robert_thirsk&canada.jpg",
+            "roberto_vittori&italy.jpg",
+            "roman_romanenko&russia.jpg",
+            "ronald_garan&usa.jpg",
+            "salizhan_sharipov&russia.jpeg",
+            "samantha_cristoforetti&italy.jpg",
+            "sandra_magnus&usa.jpg",
+            "satoshi_furukawa&japan.jpg",
+            "scott_altman&usa.jpg",
+            "scott_horowitz&usa.jpg",
+            "scott_kelly&usa.jpg",
+            "scott_parazynski&usa.jpg",
+            "scott_tingle&usa.jpg",
+            "serena_aunon-chancellor&usa.jpg",
+            "sergei_krikalev&russia.jpg",
+            "sergei_revin&russia.jpg",
+            "sergei_treshchev&russia.jpg",
+            "sergei_zalyotin&russia.jpg",
+            "sergey_prokopyev&russia.jpg",
+            "sergey_ryazansky&russia.jpg",
+            "sergey_ryzhikov&russia.jpg",
+            "sergey_volkov&russia.jpg",
+            "shannon_walker&usa.jpg",
+            "sheikh_shukor&malaysia.jpg",
+            "soichi_noguchi&japan.jpg",
+            "stanley_love&usa.jpg",
+            "stephanie_wilson&usa.jpg",
+            "stephen_bowen&usa.jpg",
+            "stephen_frick&usa.jpg",
+            "stephen_lendsey&usa.jpg",
+            "stephen_robinson&usa.jpg",
+            "steve_maclean&canada.jpg",
+            "steven_smith&usa.jpg",
+            "steven_swanson&usa.jpg",
+            "sunita_williams&usa.jpg",
+            "susan_helms&usa.jpg",
+            "takao_doi&japan.jpg",
+            "takuya_onishi&japan.jpg",
+            "talgat_musabayev&russia.jpg",
+            "tamara_jernigan&usa.jpg",
+            "terrence_wilcutt&usa.jpg",
+            "terry_virts&usa.jpg",
+            "thomas_jones&usa.jpg",
+            "thomas_mashburn&usa.jpg",
+            "thomas_pesquet&france.jpg",
+            "thomas_reiter&germany.jpg",
+            "timothy_creamer&usa.jpg",
+            "timothy_kopra&usa.jpg",
+            "timothy_peake&greatbritain.jpg",
+            "tracy_caldwell-dyson&usa.jpg",
+            "umberto_guidoni&italy.jpg",
+            "valery_korzun&russia.jpg",
+            "valery_tokarev&russia.jpg",
+            "viktor_afanasyev&russia.jpg",
+            "vladimir_dezhurov&russia.jpg",
+            "wendy_lawrence&usa.jpg",
+            "william_mcarthur&usa.jpg",
+            "william_oefelein&usa.jpg",
+            "william_shepherd&usa.jpg",
+            "yelena_serova&russia.jpg",
+            "yi_so-yeon&south_korea.jpg",
+            "yuri-lonchakov&russia.jpg",
+            "yuri_baturin&russia.jpg",
+            "yuri_gidzenko&russia.jpg",
+            "yuri_malenchenko&russia.jpg",
+            "yuri_onufrienko&russia.jpg",
+            "yuri_shargin&russia.jpg",
+            "yury_usachev&russia.jpg"
+        ];
+
+        var current = 0;
+
+        function myFunction(e) {
+            var sex = ""
+            if(e.which == m) {
+                sex = "m";
+            }
+            else if(e.which == n) {
+                sex = "f";
+            }
+            else if(e.which == u) {
+                fnChangeImage(-1);
+            }
+            else if(e.which == space) {
+                var output = "";
+                for (key in sexDict) {
+                    output += (key + ", " + sexDict[key] + ",\n");
+                }
+                console.log(output);
+                return;
+            }
+            else {
+                return;
+            }
+
+            sexDict[images[current-1].replace('.jpg','')] = sex;
+            fnChangeImage();
+        }
+
+        function fnChangeImage(step = 1) {
+            $("#image")[0].src = source + images[current];
+            current += step;
+        }
+    </script>
+
+    <!-- sex -->
+    <div style="content-align: center;">
+        <img id="image" src="" alt="img" style="margin-left: 40%; width: 400px; height: 400px;">
+    </div>
+    <div style="margin-left: 40%;">
+        <p>
+            [n] female <br/>
+            [m] male
+        </p>
+    </div>
+    </body>
+</html>
