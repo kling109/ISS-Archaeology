@@ -249,6 +249,7 @@ class Master_Model:
         processes = []
         lock = mp.Lock()
         print("Looking for learned faces in all images in {0} using {1} threads".format(img_dir, self.num_threads))
+        prepDir("./Temp")
         for filename in os.listdir(img_dir):
             regex = re.compile(r"\.")
             if regex.split(filename)[-1] != "jpg": continue
