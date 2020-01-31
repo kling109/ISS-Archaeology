@@ -23,9 +23,22 @@
     <body onkeypress="return myFunction(event)" onload="fnChangeImage();">
 
     <script language="JavaScript">
+
+        // dictionary to hold all of the astronaut's names and sexes
         var sexDict = {}
+
+        // hotkey mappings
         var m = 109, n = 110, space = 32, u = 117;
+
+        // the source directory for all photos
         var source = "./ISS_Astronaut_photos/";
+
+        // Names of all the images. I was having a difficult time getting
+        // javascript to work with reading files, so I just did ls in terminal
+        // and copied and pasted into here. If I were making produciton code I
+        // absolutely wouldn't do this, but it was for a test and we did't
+        // know if we were going to actually use it so I didn't want to waste
+        // too much time on it
         var images = [
             "akihiko_hoshide&japan.jpg",
             "alan_pointdexter&usa.jpg",
@@ -267,19 +280,29 @@
             "yury_usachev&russia.jpg"
         ];
 
+        // Current astronaut index
         var current = 0;
 
+        // chooses key presses
         function myFunction(e) {
             var sex = ""
+
+            // assign male
             if(e.which == m) {
                 sex = "m";
             }
+
+            // assign female
             else if(e.which == n) {
                 sex = "f";
             }
+
+            // undo
             else if(e.which == u) {
                 fnChangeImage(-1);
             }
+
+            // print all to console.log
             else if(e.which == space) {
                 var output = "";
                 for (key in sexDict) {
@@ -288,28 +311,37 @@
                 console.log(output);
                 return;
             }
+
+            // ignore everything else
             else {
                 return;
             }
 
+            // add data to dictionary
             sexDict[images[current-1].replace('.jpg','')] = sex;
+
+            // update the image
             fnChangeImage();
         }
 
+        // updates the image
         function fnChangeImage(step = 1) {
             $("#image")[0].src = source + images[current];
             current += step;
         }
     </script>
 
-    <!-- sex -->
     <div style="content-align: center;">
+        <!-- image -->
         <img id="image" src="" alt="img" style="margin-left: 40%; width: 400px; height: 400px;">
     </div>
     <div style="margin-left: 40%;">
+        <!-- key mappings -->
         <p>
             [n] female <br/>
-            [m] male
+            [m] male <br/>
+            [u] undo <br/>
+            [space] print to console
         </p>
     </div>
     </body>
