@@ -147,7 +147,3 @@ OSError: [Errno 24] Too many open files
 in order to run this code the test directory needs  
 the pictures from the Dropbox or Flickr
 
-# Things to Figure Out
-- What is the `test` folder for?
-- What is the `foobar` folder supposed to do?
-
