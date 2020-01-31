@@ -80,6 +80,11 @@ A class to allow easy model-training, data-saving, data-loading, and model class
 - Finds the euclidian distance between `self.facialData` and a list of astronaut facial encodings from a photo
 - Returns an array of distances
 
+## JsonFlags.py only in GregoryBranch
+it gets an OS error thats states:  
+OSError: [Errno 24] Too many open files  
+in order to run this code the test directory needs  
+the pictures from the Dropbox or Flickr
 
 # Things to Figure Out
 - What is the `test` folder for?
