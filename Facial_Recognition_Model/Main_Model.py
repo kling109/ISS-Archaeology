@@ -50,9 +50,7 @@ class Master_Model:
         directory for any of the astronauts in the model. Must be in a directory
         with a folder for storing pickled face_recognition models. Any .dat files 
         in that directory will be added to the model.
-        
-        Model takes a LONG TIME to train and to search an image for faces. This will hopefully be improved soon, but for testing puposes only run on a subset of astronauts"""
-
+    """
 
     def __init__(self, train_dir:str, astro_pickle_dir:str, num_threads = 1):
         """Class constructor for Main_Model.
@@ -62,7 +60,7 @@ class Master_Model:
 
             astro_pickle_dir:str = Directory in which face_recognition model objects will be flattened and saved as .dat files. Note that any .dat files in this directory will be added to model
 
-            num_threads:int = Number of threads to be used by the model (not yet implemented)"""
+            num_threads:int = Number of threads to be used by the model"""
         prepDir(astro_pickle_dir)
         self.astro_pickle_dir = astro_pickle_dir
         self.num_threads = abs(num_threads)
@@ -81,7 +79,7 @@ class Master_Model:
         Param: train_dir: Directory in which all images to be trained on are stored. Images must follow this naming convention:
                 <first name>_[<middle name>_]<last name>&<nationality>.jpg"""
         print("Training on all images in {0} using {1} threads".format(train_dir,self.num_threads))
-        semaphore = mp.Semaphore(max(1,self.num_threads-1))
+        semaphore = mp.Semaphore(self.num_threads)
         processes = []
         lock = mp.Lock()
         for filename in os.listdir(train_dir):
@@ -245,10 +243,11 @@ class Master_Model:
         Returns: 
         found_faces = dictionary containing entries (img:dict) as defined in the Side-Effects. Note that the returned variable is also an instance variable of the class.
         """
-        semaphore = mp.Semaphore(max(1,self.num_threads-1))
+        semaphore = mp.Semaphore(self.num_threads)
         processes = []
         lock = mp.Lock()
         print("Looking for learned faces in all images in {0} using {1} threads".format(img_dir, self.num_threads))
+        prepDir("./Temp")
         for filename in os.listdir(img_dir):
             regex = re.compile(r"\.")
             if regex.split(filename)[-1] != "jpg": continue
