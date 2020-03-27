@@ -72,6 +72,10 @@ class Astronaut:
             FoundAstronauts.append(face_recognition.compare_faces([self.facialData], face)[0])
         return FoundAstronauts
 
+
+    # Thia doesn't find the Euclidian distance in space, it finds th euclidian
+    # between the two faces as a measure of how similar they are
+
     '''
     Finds the euclidian distance between self.facialData and a list of astronaut facial encodings from a photo
     Input: a list of facial data
