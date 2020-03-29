@@ -7,10 +7,19 @@ import re
 import numpy as np
 import multiprocessing as mp
 from multiprocessing import Process
+
+# Whether images should be cached in a folder or not
+# Prevents image from being processed again
 cache_img = True
 err_log = []
 
-#Just a helper method, carry on...
+'''
+DESC:
+
+INPUT:
+
+OUTPUT:
+'''
 def getDir(filePath:str):
     if "/" not in filePath and "\\" not in filePath:
         return "./"
@@ -18,6 +27,13 @@ def getDir(filePath:str):
     filePath = regex.split(filePath)
     return "/".join(filePath[:-1])+"/"
 
+'''
+DESC:   Returns the paritally/qualified version of a filepath
+
+INPUT:  A string filepath as `filepath`
+
+OUTPUT: A filepath
+'''
 def getFileName(filePath:str):
     if "/" not in filePath and "\\" not in filePath:
         return filePath
@@ -25,11 +41,28 @@ def getFileName(filePath:str):
     filePath = regex.split(filePath)
     return filePath[-1]
 
+'''
+DESC:   Creates a directory if it is missing
+
+INPUT:  A string as the path of the directory as `fileDir`
+
+OUTPUT: None
+'''
 def prepDir(fileDir:str):
-    if fileDir[-1] == "/" or fileDir[-1] =="\\": fileDir = fileDir[:-1]
+    if fileDir[-1] == "/" or fileDir[-1] =="\\":
+        fileDir = fileDir[:-1]
     if not os.path.isdir(fileDir):
         os.makedirs(fileDir)
 
+'''
+DESC:   Saves a pickle object to a .dat file
+
+INPUT:  A string `directory` as the file location to save to, a string
+        `file_name` as the name use for the new .dat file, and a pickle object
+        `pickle_obj` as the information to be pickled
+
+OUTPUT: None
+'''
 def makePickle(directory:str, file_name:str, pickle_obj):
     regex = re.compile(r"\.")
     file_name_no_extension = regex.split(file_name)[0]
@@ -37,6 +70,14 @@ def makePickle(directory:str, file_name:str, pickle_obj):
     with open("{0}{1}.dat".format(directory,file_name_no_extension),"wb") as f:
         pickle.dump(pickle_obj,f)
 
+'''
+DESC:   Prints the error message from the error log
+
+INPUT:  A string `msg` that holds a message to be printed along with the
+        errors
+
+OUTPUT: None
+'''
 def printErr(msg:str):
     if len(err_log) == 0 : return
     print(msg)
@@ -44,119 +85,192 @@ def printErr(msg:str):
         print("\t{}".format(err_log.pop()))
 
 
+'''
+Model trained to find all astronauts. Contains methods for adding astronauts to
+model,searching a picture for astronauts, or searching all pictures in a
+directory for any of the astronauts in the model. Must be in a directory
+with a folder for storing pickled face_recognition models. Any .dat files
+in that directory will be added to the model.
+'''
 class Master_Model:
-    """Model trained to find all astronauts. Contains methods for adding astronauts to
-        model,searching a picture for astronauts, or searching all pictures in a
-        directory for any of the astronauts in the model. Must be in a directory
-        with a folder for storing pickled face_recognition models. Any .dat files
-        in that directory will be added to the model.
-    """
 
+    '''
+    Class constructor for Main_Model.
+
+    PARAM:
+        train_dir:str = directory containing pictures of all astronauts to
+        be added to model. Picture files must follow the following naming
+        convention:
+            <first name>_[<middle name>_]<last name>&<nationality>.jpg
+
+        astro_pickle_dir:str = Directory in which face_recognition model objects
+        will be flattened and saved as .dat files. Note that any .dat files in
+        this directory will be added to model
+
+        num_threads:int = Number of threads to be used by the model
+    '''
     def __init__(self, train_dir:str, astro_pickle_dir:str, num_threads = 1):
-        """Class constructor for Main_Model.
-
-        PARAM: train_dir:str = directory containing pictures of all astronauts to be added to model. Picture files must follow the following naming convention:
-                <first name>_[<middle name>_]<last name>&<nationality>.jpg
-
-            astro_pickle_dir:str = Directory in which face_recognition model objects will be flattened and saved as .dat files. Note that any .dat files in this directory will be added to model
-
-            num_threads:int = Number of threads to be used by the model"""
+        # Create a directory for the astronaut dat files
         prepDir(astro_pickle_dir)
+
+        # Initialize parameters
         self.astro_pickle_dir = astro_pickle_dir
         self.num_threads = abs(num_threads)
         self.known_faces = self.itemizeKnown()
         self.found_faces = {}
         self.img_cache = {}
+
+        # Train the model on all of the faces in the training directory
         self.train(train_dir)
+
+        # Load all photos from the cache
         if os.path.exists("./img_cache/img_cache.dat"):
             with open("./img_cache/img_cache.dat",'rb') as f:
                 self.img_cache = pickle.load(f)
 
 
-    def train(self,train_dir:str):
-        """Function adds astronaut objects to model for every image in the given directory and trains the astonaut object to recognize the face in the image. If an image in the directory already has a corresponding .dat file in astro_pickle_dir, it will be ignored.
+    '''
+    Function adds astronaut objects to model for every image in the given directory and trains the astonaut object to recognize the face in the image. If an image in the directory already has a corresponding .dat file in astro_pickle_dir, it will be ignored.
 
-        Param: train_dir: Directory in which all images to be trained on are stored. Images must follow this naming convention:
-                <first name>_[<middle name>_]<last name>&<nationality>.jpg"""
+    PARAM:
+        train_dir: Directory in which all images to be trained on are
+        stored. Images must follow this naming convention:
+            <first name>_[<middle name>_]<last name>&<nationality>.jpg
+    '''
+    def train(self,train_dir:str):
         print("Training on all images in {0} using {1} threads".format(train_dir,self.num_threads))
+
+        # Set up multithreading
         semaphore = mp.Semaphore(self.num_threads)
         processes = []
         lock = mp.Lock()
+
+        # Cycle through all jpeg files and train on them
         for filename in os.listdir(train_dir):
-            if filename.split(".")[-1] != "jpg": continue
+            # Checks if jpeg
+            if filename.split(".")[-1] != "jpg":
+                continue
+
             lock.acquire()
             print("Training on image:", filename)
             lock.release()
-            a = self.astroInit(filename)
-            if a == None : continue
-            if a.filename in self.known_faces :
+
+            # Create an astronaut
+            astro = self.astroInit(filename)
+            if astro == None :
+                continue
+
+            if astro.filename in self.known_faces :
                 print("\tModel has already been trained on",filename)
                 continue
+
+            # Train
             semaphore.acquire()
             p = Process(target = self.addAstro, args = ("{0}{1}".format(train_dir,filename), semaphore,lock))
             processes.append(p)
             p.start()
+
+        # Wait for processes to rejoin
         for proc in processes:
             proc.join()
 
 
 
-    def addAstro(self,astronaut,sem:mp.Semaphore, lock:mp.Lock):
-        """File adds given astronaut object or picture to model.
+    '''
+    File adds given astronaut object or picture to model.
 
-        Parameter:
-        astronaut = Can by of type Astro.Astronaut or str (in which case it should be a file path). If it is of type Astro.Astronaut, astronaut will be directly added to the model. If it is a filepath, an astronaut object will be created, trained on the image, and added to the model. Filepath must follow naming conventions outlined in Master_Model.train()
-            """
+    PARAM:
+        astronaut = Can by of type Astro.Astronaut or str (in which case it
+        should be a file path). If it is of type Astro.Astronaut, astronaut
+        will be directly added to the model. If it is a filepath, an astronaut
+        object will be created, trained on the image, and added to the model.
+        Filepath must follow naming conventions outlined in Master_Model.train()
+    '''
+    def addAstro(self, astronaut, sem:mp.Semaphore, lock:mp.Lock):
+        # If the astronaut passed is a person
         if type(astronaut) == Astro.Astronaut:
+            # Save their data
             astronaut.saveData(self.astro_pickle_dir)
+            # Add to the list of alread-learned faces
             self.known_faces[astronaut.filename] = astronaut.facialData
+
+        # If the astronaut is just a name
         if type(astronaut) == str:
-            a = self.astroInit(astronaut)
-            if(a==None):
+            # Create the astronaut
+            astro = self.astroInit(astronaut)
+
+            if(astro == None):
                sem.release()
                return
-            if a.filename in self.known_faces:
+
+            # If the astronaut is already known
+            if astro.filename in self.known_faces:
                 lock.acquire()
                 print("\tModel has already been trained on",astronaut)
                 lock.release()
                 sem.release()
                 return
-            a.trainModel(astronaut,lock)
-            if type(a.facialData) == np.ndarray:
-                a.saveData(self.astro_pickle_dir)
-                self.known_faces[a.filename] = a.facialData
+
+            # Train the model
+            astro.trainModel(astronaut,lock)
+
+            if type(astro.facialData) == np.ndarray:
+                astro.saveData(self.astro_pickle_dir)
+                self.known_faces[astro.filename] = astro.facialData
+
             sem.release()
 
-#    def addAstros(self, astros:list):
-#        """Same behavior as addAstro, but works on a list of filepaths or astronaut objects"""
-#        for a in astros:
-#            self.addAstro(a)
+    '''
+    DESC:   Creates an astronaut object from a filepath to a photo
 
+    INPUT:  A string filepath as `filepath`
+
+    OUTPUT: Astro object
+    '''
     def astroInit(self, filepath):
-        #helper method, nothing to see here...
+        # Finds the name of the photo from the filepath
         regex_noPath = re.compile(r'\/')
-        regex_nc = re.compile(r"&")
-        regex_names = re.compile(r"_")
-        regex_no_dot = re.compile(r"\.")
         filename = regex_noPath.split(filepath)[-1]
+
+        # Finds the name and country from the file name
+        regex_nc = re.compile(r"&")
         name_country = regex_nc.split(filename)
+
+        # Finds the astroaut's name
+        regex_names = re.compile(r"_")
         ident = regex_names.split(name_country[0])
+
+        # Finds the astronaut's coutry
+        regex_no_dot = re.compile(r"\.")
         country = regex_no_dot.split(name_country[1])[0]
+
+        # Removes an identifier string from the list of names
         if "cropped" in ident:
             ident.remove("cropped")
+
+        # If there's a middle name, assign it
         if len(ident)==3:
             fName, lName, mName = ident
             return Astro.Astronaut(country,fName,lName,mName)
+        # If there's not, don't
         elif len(ident)==2:
             fName, lName = ident
             return Astro.Astronaut(country, fName, lName)
+        # If there are the wrong number of names, print an error
         else:
             print("\tERROR: Incorrectly formatted file name: {}\n\tFiles must be named <first name>_<lastname>&country.jpg".format(filename))
             print("\tFile will be ignored")
             return None
 
+    '''
+    DESC:   Initializes an astronaut from a filepath and loads their facial data
+
+    INPUT:  A string filepath as `filepath`
+
+    OUTPUT: Astro object
+    '''
     def loadAstro(self, filePath):
-        #helper method, nothing to see here...
+        # Initializes the astronaut
         a = self.astroInit(filePath)
         directory = getDir(filePath)
         if a == None:
@@ -164,60 +278,98 @@ class Master_Model:
         a.loadData(directory)
         return a
 
-    def findFaces(self,img_path:str, sem:mp.Semaphore, lock:mp.Lock):
-        """Method searches image for astronaut faces
 
-        Parameters:
+    '''
+    Method searches image for astronaut faces
+
+    Parameters:
         img_path:str = path of image to search for astronaut faces.
 
-        Returns:
-        img_entry:dict = Dictionary object consisting of (a:i) pairs where a is the found astronaut, i is the index of the face attributed to the astronaut. Indicies are generated by the face_recognition library.
-        """
+    Returns:
+        img_entry:dict = Dictionary object consisting of (a:i) pairs where a is
+        the found astronaut, i is the index of the face attributed to the
+        astronaut. Indicies are generated by the face_recognition library.
+    '''
+    def findFaces(self,img_path:str, sem:mp.Semaphore, lock:mp.Lock):
+        # A dictionary of all of the astronauts found in the photo
         img_entry = {}
+        # Unknown faces found
         unknown_encodings = None
+        # Location data that hasn't been labled yet
         unknown_locations = []
+        # Whether the image is found in the cache
         found_in_cache = False
+        # Get the name of the file from path
         img_name = getFileName(img_path)
+
+        # If we're supposed to look in the cache
         if cache_img:
             if img_name in self.img_cache:
+                # Assign already-found encodings
                 unknown_encodings = self.img_cache[img_name]
                 found_in_cache = True
+
+        # If the image is not in the cache
         if not found_in_cache:
             try:
                 unknown_image = face_recognition.load_image_file(img_path)
+                # Find dacial encodings and locations from the image
                 unknown_encodings, unknown_locations = self.encodeWithRotation(unknown_image)
 
-                self.img_cache[img_name] = unknown_encodings
+                # Save the encodings and locations to the cache
+                self.img_cache[img_name] = (unknown_encodings,unknown_locations)
             except IndexError:
                 lock.acquire()
                 err_log.append("\tI wasn't able to locate any faces in image: {} ... Image will not be included in results".format(img_path))
                 lock.release()
                 return None
+
+        # For every file in the pickling directory
         for filename in os.listdir(self.astro_pickle_dir):
             fullpath = self.astro_pickle_dir+filename
+
+            # Initialize astronaut
             astro = self.loadAstro(fullpath)
             if astro == None:
                 return None
+
+            # Check their face against the encodings and which people match
             found_arr = astro.checkFace(unknown_encodings)
 
+            # Find a list of deltas to the faces
             facailSimilarities = astro.faceDistance(unknown_encodings)
+
+            # Find the distances between every astronaut and every other astronaut
             face_dist = self.custFaceDistance(unknown_locations)
+
+            # Skip the face if no one matched
             if sum(found_arr) == 0 :
                 continue
+            # If there was a match
             else:
+                # Create an entry for the image
                 img_entry[astro.filename] = []
                 for i in range(len(found_arr)):
+                    # Add astronauts to dictionary of people in the image
                     if found_arr[i] != 0:
                         img_entry[astro.filename].append((i,facailSimilarities[i], face_dist))
 
-        print(self.deleteRepeats(img_entry))
+        # Pickle the results without repeats
         pickle_obj = (img_name, self.deleteRepeats(img_entry))
         makePickle("./Temp/",img_name,pickle_obj)
         sem.release()
 
+    '''
+    DESC:   Deletes the repeated faces in a photo
+
+    INPUT:  A dictionary of faces, `faces`
+
+    OUTPUT: A dictionary of non-repeated faces
+    '''
     def deleteRepeats(self,faces:dict):
         unrepeated_faces = {}
         seen_index = []
+
         for k_1 in faces:
             for t_1 in faces[k_1]:
                 current_index = t_1[0]
@@ -237,33 +389,49 @@ class Master_Model:
                 unrepeated_faces[entry[0]] = [entry[1]]
         return unrepeated_faces
 
-    def findFacesDir(self, img_dir, cache_search = True):
-        """Method searches all images in given directory for astronaut faces
 
-        Parameters:
+    '''
+    Method searches all images in given directory for astronaut faces
+
+    Parameters:
         img_dir:str = path to directory containing images to search
-        cache_search:bool = True value indicates that dictionary should be pickled and stored for future quick retrevial. Only set to false if very confident that no images in the directory will be searched again.
+        cache_search:bool = True value indicates that dictionary should be
+        pickled and stored for future quick retrevial. Only set to false if
+        very confident that no images in the directory will be searched again.
 
-        Side-Effect: Adds entries (img: dict) to found_faces dictionary, where img is the filepath of an image and the dict is the dictionary returned from findFaces(img)
+        Side-Effect: Adds entries (img: dict) to found_faces dictionary, where
+        img is the filepath of an image and the dict is the dictionary returned
+        from findFaces(img)
 
-        Returns:
-        found_faces = dictionary containing entries (img:dict) as defined in the Side-Effects. Note that the returned variable is also an instance variable of the class.
-        """
+    Returns:
+        found_faces = dictionary containing entries (img:dict) as defined in the
+        Side-Effects. Note that the returned variable is also an instance
+        variable of the class.
+    '''
+    def findFacesDir(self, img_dir, cache_search = True):
         semaphore = mp.Semaphore(self.num_threads)
         processes = []
         lock = mp.Lock()
         print("Looking for learned faces in all images in {0} using {1} threads".format(img_dir, self.num_threads))
         prepDir("./Temp")
+
+        # Cycles through all filenames
         for filename in os.listdir(img_dir):
+            # Finds the jpg files
             regex = re.compile(r"\.")
             if regex.split(filename)[-1] != "jpg": continue
             print("Analyzing image",filename)
             fullpath = img_dir+filename
             semaphore.acquire()
+            # Creates a list of processes to run the faces
             p = Process(target = self.findFaces, args = (fullpath, semaphore,lock))
             processes.append(p)
             p.start()
+
+        # Join processes
         for proc in processes: proc.join()
+
+        # Load the results of all of the image processing
         self.unpickleResults()
         print(self.found_faces)
         printErr("While processing the images the following errors occured:")
@@ -273,6 +441,13 @@ class Master_Model:
 
         return self.found_faces
 
+    '''
+    DESC:   Lists all of the astronauts already known
+
+    INPUT:  None
+
+    OUTPUT: A list of known astronauts
+    '''
     def itemizeKnown(self):
         #helper method, nothing to see here...
         known_astro = {}
@@ -281,6 +456,13 @@ class Master_Model:
                 known_astro.update(pickle.load(f))
         return known_astro
 
+    '''
+    DESC:   Loads all of the results from memory
+
+    INPUT:  None
+
+    OUTPUT: None
+    '''
     def unpickleResults(self):
         for filename in os.listdir("./Temp"):
             with open("./Temp/"+filename,"rb") as f:
@@ -288,19 +470,16 @@ class Master_Model:
                 self.found_faces[result[0]] = [result[1]]
         shutil.rmtree('./Temp')
 
-    # Todo: update documentation
+    '''
+    DESC:   Rotates points in a given image a certain number of times. This has
+            the effect of turning an xy plane 90º for every rotation specified
 
-'''
-DESC:   Rotates points in a given image a certain number of times. This has the
-        effect of turning an xy plane 90º for every rotation specified
+    INPUT:  self, the x/y coordinates of a point as `x` and `y`, the image
+            that's being referenced as `img`, the number of times to be rotated
+            as `times`, and the direction to be rotated as dir
 
-INPUT:  self, the x/y coordinates of a point as `x` and `y`, the image that's
-        being referenced as `img`, the number of times to be rotated as `times`,
-        and the direction to be rotated as dir
-
-OUTPUT: A new, rotated, x/y pair of coordinates
-'''
-
+    OUTPUT: A new, rotated, x/y pair of coordinates
+    '''
     # Checked in `rotationTest.py` and it works as expected
     def rotateCoordinates90(self, x, y, img, times, dir = "r"):
         x_max, y_max, z_max = img.shape
@@ -321,19 +500,19 @@ OUTPUT: A new, rotated, x/y pair of coordinates
         else:
             return y_max-y, x
 
-'''
-DESC:   Finds all of the facial encodings in an image as well as the locations
-        for all of their faces. Includes rotating the image 4 times to make
-        sure that all faces are found
+    '''
+    DESC:   Finds all of the facial encodings in an image as well as the
+            locations for all of their faces. Includes rotating the image 4
+            times to make sure that all faces are found
 
-INPUT:  self, and the image to be scanned for faces, `img`
+    INPUT:  self, and the image to be scanned for faces, `img`
 
-OUTPUT: A list of facial encodings found in the image and a list of face
-        locations. The locations are in the format [(x1,y1,x2,y2),...], where
-        every tuple is a facial location, and where x1/y1 are the bottom left
-        and x2/y2 are the top right of a bounding box around the person's face
-'''
-
+    OUTPUT: A list of facial encodings found in the image and a list of face
+            locations. The locations are in the format [(x1,y1,x2,y2),...],
+            where every tuple is a facial location, and where x1/y1 are the
+            bottom left and x2/y2 are the top right of a bounding box around
+            the person's face
+    '''
     def encodeWithRotation(self, img):
         faces = []
         locs = []
@@ -351,17 +530,17 @@ OUTPUT: A list of facial encodings found in the image and a list of face
 
         return faces, locs
 
-'''
-DESC:   Takes a given image and list of facial locations and returns the rotated
-        version of those encodings
+    '''
+    DESC:   Takes a given image and list of facial locations and returns the
+            rotated version of those encodings
 
-INPUT:  self, a list of facial bounding box locations as `locations`, the image
-        being used for reference as `img`, and the number of times that the
-        points are to be rotated as `times`
+    INPUT:  self, a list of facial bounding box locations as `locations`, the
+            image being used for reference as `img`, and the number of times
+            that the points are to be rotated as `times`
 
-OUTPUT: A list of new facial locations that have been rotated the appropriate
-        number of times
-'''
+    OUTPUT: A list of new facial locations that have been rotated the
+            appropriate number of times
+    '''
     def rotateAllLocations(self, locations, img, times):
         newEncodings = []
         # Updates every rectangle (x1,y1,x2,y2) in locations
@@ -374,23 +553,24 @@ OUTPUT: A list of new facial locations that have been rotated the appropriate
 
         return newEncodings
 
-'''
-DESC:   Calculates the distance between each face and every other face in the
-        given photo
+    '''
+    DESC:   Calculates the distance between each face and every other face in
+            the given photo
 
-INPUT:  self, a list of astronaut facial coordinates (lower left corner and upper
-        right corner of a facial bounding box) labled `listOfAstroCoords`.
-        The format for this list it [(x1,y1,x2,y2),...], where 1 is the bottom
-        left and 2 is the top right of the box.
+    INPUT:  self, a list of astronaut facial coordinates (lower left corner and
+            upper right corner of a facial bounding box) labled
+            `listOfAstroCoords`. The format for this list it
+            [(x1,y1,x2,y2),...], where 1 is the bottom left and 2 is the top
+            right of the box.
 
-OUTPUT: A list of distances between each astronaut and every other astronaut.
-        The list is in the format [[d1,...,dn],...], where every index of the
-        outer list cooresponds to an astroaut found in the image, and every
-        element of the inner list cooresponds to an astronaut. The astronauts
-        in the same order in both the inner and outer list, so astronaut at
-        index [n] of the outer list would be at inex [n][n] of the outer list
-'''
-
+    OUTPUT: A list of distances between each astronaut and every other
+            astronaut. The list is in the format [[d1,...,dn],...], where every
+            index of the outer list cooresponds to an astroaut found in the
+            image, and every element of the inner list cooresponds to an
+            astronaut. The astronauts in the same order in both the inner and
+            outer list, so astronaut at index [n] of the outer list would be at
+            index [n][n] of the outer list.
+    '''
     def custFaceDistance(self, listOfAstroCoords):
         # Compute the area of each face
         faceArea = np.array([((x[2]-x[0])*x[3]-x[1]) for x in listOfAstroCoords])

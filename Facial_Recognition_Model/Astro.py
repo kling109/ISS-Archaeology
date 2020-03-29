@@ -2,15 +2,19 @@ import face_recognition
 import pickle
 import multiprocessing as mp
 
-# A class to allow easy model-training, data-saving, data-loading, and model
-# classification for each astronaut.
+'''
+A class to allow easy model-training, data-saving, data-loading, and model
+classification for each astronaut.
+'''
 class Astronaut:
 
     '''
     Constructor
-    Input: Country, first name, last name, and middle name as strings. The
-           middle name defaults to ""
-    Output: None
+
+    INPUT:  Country, first name, last name, and middle name as strings. The
+            middle name defaults to ""
+
+    OUTPUT: None
     '''
     def __init__(self, country: str, fName : str, lName : str, mName  = ""):
         self.fName = fName
@@ -21,9 +25,12 @@ class Astronaut:
         self.filename = "{0}_{1}&{2}".format(fName, lName, country)
 
     '''
-    Trains the face encodings based on a file, provided by a filepath
-    Input: a filepath to the image that will be encoded into facial markers
-    Output: None
+    DESC:   Trains the face encodings based on a file, provided by a filepath
+
+    INPUT:  a filepath to the image that will be encoded into facial markers,
+            and a lock for multithreading
+
+    OUTPUT: None
     '''
     def trainModel(self, imageFilepath, lock:mp.Lock):
         known = face_recognition.load_image_file(imageFilepath)
@@ -49,10 +56,11 @@ class Astronaut:
             f.close()
 
     '''
-    Loads the astronaut's information from a binary file provided the filepath
-    Input: a filepath for the location the data will be read from, taken as a string
-           and defaulted to ""
-    Output: None
+    DESC:   Loads the astronaut's information from a binary file provided the filepath
+
+    INPUT:  a filepath for the location the data will be read from, taken as a string
+            and defaulted to ""
+    OUTPUT: None
     '''
     def loadData(self, filePath = ""):
         tempDict = {}
@@ -62,9 +70,11 @@ class Astronaut:
         self.facialData = tempDict[self.filename]
 
     '''
-    Searches for matches when given a list of astronaut facial encodings from a photo
-    Input: a list of facial data
-    Output: a list of found astronauts
+    DESC:   Searches for matches when given a list of astronaut facial encodings from a photo
+
+    INPUT:  a list of facial data
+
+    OUTPUT: a list of found astronauts
     '''
     def checkFace(self, listOfAstronauts):
         FoundAstronauts = []
@@ -73,13 +83,13 @@ class Astronaut:
         return FoundAstronauts
 
 
-    # Thia doesn't find the Euclidian distance in space, it finds th euclidian
-    # between the two faces as a measure of how similar they are
-
     '''
-    Finds the euclidian distance between self.facialData and a list of astronaut facial encodings from a photo
-    Input: a list of facial data
-    Output: a list of the euclidian distances
+    DESC:   Finds the euclidian distance between self.facialData facial encoding
+            and a list of astronaut facial encodings from a photo
+
+    INPUT:  a list of facial data
+
+    OUTPUT: a list of the euclidian distances
     '''
     def faceDistance(self, listOfAstronauts):
         FoundAstronauts = []
