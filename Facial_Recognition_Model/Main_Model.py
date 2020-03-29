@@ -14,11 +14,11 @@ cache_img = True
 err_log = []
 
 '''
-DESC:
+DESC:   Gets the directory containing a file
 
-INPUT:
+INPUT:  A string filepath as `filePath`
 
-OUTPUT:
+OUTPUT: The directory containing the given object, represented as a string
 '''
 def getDir(filePath:str):
     if "/" not in filePath and "\\" not in filePath:
@@ -26,6 +26,7 @@ def getDir(filePath:str):
     regex = re.compile(r"\/")
     filePath = regex.split(filePath)
     return "/".join(filePath[:-1])+"/"
+
 
 '''
 DESC:   Returns the paritally/qualified version of a filepath
@@ -127,6 +128,38 @@ class Master_Model:
         if os.path.exists("./img_cache/img_cache.dat"):
             with open("./img_cache/img_cache.dat",'rb') as f:
                 self.img_cache = pickle.load(f)
+
+    '''
+    DESC:   Outputs the found faces
+
+    INPUT:  Self
+
+    OUTPUT: All of the faces found
+    '''
+    def outputResults(self):
+        return self.found_faces
+
+    '''
+    DESC:   Resets the list of found faces
+
+    INPUT:  Self
+
+    OUTPUT: None
+    '''
+    def clearResults(self):
+        self.found_faces = {}
+
+    '''
+    DESC:   Outputs the found faces and resets found_faces
+
+    INPUT:  Self
+
+    OUTPUT: All of the faces found
+    '''
+    def purgeResults(self):
+        temp = self.found_faces
+        self.found_faces = {}
+        return temp
 
 
     '''
