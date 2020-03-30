@@ -184,14 +184,53 @@ def findRawFrequencies(photos:dict, save:bool = False, fileName:str = "rawFreque
 
 
 '''
+DESC:   Produce a dictionary of all pairs appearing in the photos
+
+INPUT:  photos:dict
+            - A dictionary of photos that has been loaded in
+        save:bool = False
+            - Whether the result should be saved to a json file
+        fileName:str = "pairs"
+            - The filename of the file that the results will be saved in
+
+OUTPUT: A dictionary where keys are tuples of astronaut name pairings and the
+        values are the number of times that they were in photos together
+'''
+def findPairs(photos:dict, save:bool = False, fileName:str = "pairs"):
+
+    pairs = {}
+
+    for photo in photos:
+        for a1 in range(0, len(photo)):
+            for a2 in range(a1, len(photo)):
+                # Skip when they're the same astronaut
+                if photo[a1] == photo[a2]:
+                    continue
+
+                if str((photo[a1], photo[a2])) in pairs:
+                    pairs[str((photo[a1], photo[a2]))] += 1
+                elif str((photo[a2], photo[a1])) in pairs:
+                    pairs[str((photo[a2], photo[a1]))] += 1
+                else:
+                    pairs[str((photo[a1], photo[a2]))] = 1
+
+    if save:
+        # Save the frequencies at which pairs appear to a json
+        with open('{0}.json'.format(fileName), 'w') as fp:
+            json.dump(pairs, fp)
+
+    return pairs
+
+
+'''
 DESC:   Runs the entire model and returns the results
 
-INPUT:  apriori:bool = True
+INPUT:  apriori:bool = False
             - Whether the apriori algorithm should be run and return a value
-        fItems:bool = True
+        fItems:bool = False
             - Whether the frequent items from the apriori algorithm should be
             returned
-        rawF:bool = True,
+        rawF:bool = False,
             - Whether the raw frequencies of astronauts should be found and
             returned
         sourceDir:str = './dumpDir'
@@ -207,17 +246,22 @@ INPUT:  apriori:bool = True
             - Whether the raw frequencies data should be saved
         rawFreqFileName:str = "rawFrequencies"
             - Where the raw frequencies data should be saved
+        savePairs:bool = False,
+            - Whether the astronaut pairing data should be saved
+        pairFileName:str = "pairs"
+            - Where the astronaut pairing data should be saved
 
 OUTPUT: A dictionary that contains the information specified by the boolean
         parameters
 '''
-def runModel(apriori:bool = True, fItems:bool = True, rawF:bool = True,
-    sourceDir:str = './dumpDir', verbose:bool = False, saveFreq:bool = False,
-    freqFileName:str = "frequentPairs", saveRawFreq:bool = False,
-    rawFreqFileName:str = "rawFrequencies"):
+def runModel(apriori:bool = False, fItems:bool = False, rawF:bool = False,
+    pairs:bool = False, sourceDir:str = './dumpDir', verbose:bool = False,
+    saveFreq:bool = False, freqFileName:str = "frequentPairs",
+    saveRawFreq:bool = False, rawFreqFileName:str = "rawFrequencies",
+    savePairs:bool = False, pairFileName:str = "pairs"):
 
     # Skips the entire thing if the flags indicate nothing should be run
-    if not (apriori or fItems or rawF): return {}
+    if not (apriori or fItems or rawF or pairs): return {}
 
     returnValue = {}
     photos = loadPhotos(sourceDir, verbose)
@@ -234,9 +278,12 @@ def runModel(apriori:bool = True, fItems:bool = True, rawF:bool = True,
     if rawF:
         returnValue["rawFreq"] = findRawFrequencies(photos, saveRawFreq, rawFreqFileName)
 
+    if pairs:
+        returnValue['pairs'] = findPairs(transactions, savePairs, pairFileName)
+
     return returnValue
 
 
 
 if __name__ == "__main__":
-    print(runModel())
+    print(runModel(pairs = True))
