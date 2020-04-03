@@ -1,5 +1,5 @@
 '''
-@author:    Matt Raymond
+@author:    Driver method by Matt Raymond, original code by Trevor Kling
 @desc:      This file contains a driver method for our apriori algorithm, and is
             meant to simplify implimentation in future code
 '''
@@ -286,4 +286,5 @@ def runModel(apriori:bool = False, fItems:bool = False, rawF:bool = False,
 
 
 if __name__ == "__main__":
-    print(runModel(pairs = True))
+    print(runModel(apriori = True, fItems = True, rawF = True, pairs = True,
+        saveFreq = True, saveRawFreq = True, savePairs = True))

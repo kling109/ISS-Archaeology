@@ -1,3 +1,8 @@
+'''
+@author:    Daniel Briseno
+@editor:    Matt Raymond
+'''
+
 import Astro
 import pickle
 import face_recognition
