@@ -229,16 +229,46 @@ def graphData(names:dict, img:dict, pairs:dict, fp:dict = None, save:bool = True
     i = 0
     j = 0
 
+    initial = (0,0)
+
+    DIAMS = [(len(names[k])**(5/9))*20 for k in names.keys()]
+
+    num = int(len(names.keys())**(1/2))+1
+
+    CENTROIDS = []
+
+    offset = max(DIAMS)
+    x_pos = 0
+    y_pos = 0
+
+    cont = True
+    for x in range(num):
+        for y in range(num):
+            if(x*num+y >= len(DIAMS)):
+                cont = False
+                break
+            CENTROIDS.append((x_pos, y_pos))
+            y_pos += offset*1
+
+        if not cont: break
+
+        x_pos += offset*1.2
+        y_pos = 0
+
+        offset = max(DIAMS[x*num:])
+
+
+    NAMES = list(names.keys())
 
     # for country in list(names.keys()):
-    #     print(country, names[country])
+    #     centroi
 
     # Each centroid, diam, and color corresponds to a specific country
-    CENTROIDS = [(200, 500), (100, 100), (500, 500), (500, 200), (125, 400),
-                 (550, 300), (390, 150), (400, 255), (400, 570), (400, 600),
-                 (400, 595)]
+    # CENTROIDS = [(200, 500), (100, 100), (500, 500), (500, 200), (125, 400),
+                 # (550, 300), (390, 150), (400, 255), (400, 570), (400, 600),
+                 # (400, 595)]
      # ['russia', 'usa', 'kazakhstan', 'greatbritain', 'japan', 'italy', 'netherlands', 'canada', 'brazil']
-    DIAMS = [130, 230, 20, 20, 50, 20, 20, 20, 20, 20, 20]
+    # DIAMS = [130, 230, 20, 20, 50, 20, 20, 20, 20, 20, 20]
     COLORS = ['#cc0000', '#cc9900', '#009900', '#990099', '#6600ff', '#339966',
               '#663300', '#99cc00', '#727072', '#669999', '#993333']
 
@@ -254,6 +284,7 @@ def graphData(names:dict, img:dict, pairs:dict, fp:dict = None, save:bool = True
                 labels[n] = n
                 nodes.append(n)
                 node_colors.append(col)
+
                 j += 1
         i += 1
 
@@ -358,4 +389,4 @@ def generateGraph(photoPath:str = '../Data/Portraits_Cropped/',
 
 
 if __name__ == '__main__':
-    generateGraph(limit = False)
+    generateGraph(limit = True)
