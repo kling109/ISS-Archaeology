@@ -59,7 +59,10 @@ INPUT:  A string filepath to the directory that contains the photos of
 
 OUTPUT: None
 '''
-def runModel(trainDir:str, dataDir:str, pickleDir:str, numThreads:int = 4, dumpDir:str = "./dumpDir", recursive:bool = False):
+def runModel(trainDir:str, dataDir:str, pickleDir:str, numThreads:int = 4, dumpDir:str = "../Data/Scan_Result", recursive:bool = False):
+    if trainDir[-1] != "/": trainDir += "/"
+    if pickleDir[-1] != "/": pickleDir += "/"
+
     model = Main_Model.Master_Model(trainDir, pickleDir, numThreads)
     photos = getPhotoData(model, dataDir, True)
 
@@ -74,5 +77,5 @@ def runModel(trainDir:str, dataDir:str, pickleDir:str, numThreads:int = 4, dumpD
             json.dump(photos[key], fp)
 
 if __name__ == "__main__":
-    runModel(trainDir = "../cropped_Astronaut_photos/", dataDir = "../Andre_Kuipers/",
-        pickleDir = "./pickles_bin/", numThreads = 8, dumpDir = "./dumpDir", recursive = True)
+    runModel(trainDir = "../Data/Portraits", dataDir = "../Data/Test_Input",
+        pickleDir = "../Data/Temp/Portrait_Bin", numThreads = 8, recursive = True)

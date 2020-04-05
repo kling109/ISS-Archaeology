@@ -115,9 +115,14 @@ class Master_Model:
 
         num_threads:int = Number of threads to be used by the model
     '''
-    def __init__(self, train_dir:str, astro_pickle_dir:str, num_threads = 1):
+    def __init__(self, train_dir:str, astro_pickle_dir:str, num_threads:int = 1):
         # Create a directory for the astronaut dat files
         prepDir(astro_pickle_dir)
+
+        self.parent_dir = '/'.join(train_dir.split('/')[0:-2])
+        self.cache_dir = self.parent_dir + '/Temp'
+        self.input_cache =  self.cache_dir + '/Photo_Bin'
+        self.main_cache = self.cache_dir + "/Input_Cache.dat"
 
         # Initialize parameters
         self.astro_pickle_dir = astro_pickle_dir
@@ -125,13 +130,14 @@ class Master_Model:
         self.known_faces = self.itemizeKnown()
         self.found_faces = {}
         self.img_cache = {}
+        self.cache_path = self.input_cache + '/'
 
         # Train the model on all of the faces in the training directory
         self.train(train_dir)
 
         # Load all photos from the cache
-        if os.path.exists("./img_cache/img_cache.dat"):
-            with open("./img_cache/img_cache.dat",'rb') as f:
+        if os.path.exists(self.main_cache):
+            with open(self.main_cache,'rb') as f:
                 self.img_cache = pickle.load(f)
 
     '''
@@ -340,12 +346,19 @@ class Master_Model:
         # Get the name of the file from path
         img_name = getFileName(img_path)
 
+        picklePath = '{0}/{1}.dat'.format(self.cache_path, img_name.split('.')[0])
+
         # If we're supposed to look in the cache
         if cache_img:
             if img_name in self.img_cache:
                 # Assign already-found encodings
                 unknown_encodings = self.img_cache[img_name]
                 found_in_cache = True
+            elif os.path.exists(picklePath):
+                with open(picklePath,"rb") as f:
+                    self.img_cache[img_name] = pickle.load(f)
+                sem.release()
+                return
 
         # If the image is not in the cache
         if not found_in_cache:
@@ -355,12 +368,17 @@ class Master_Model:
                 unknown_encodings, unknown_locations = self.encodeWithRotation(unknown_image)
 
                 # Save the encodings and locations to the cache
-                self.img_cache[img_name] = (unknown_encodings,unknown_locations)
+                # self.img_cache[img_name] = (unknown_encodings,unknown_locations)
+                self.img_cache[img_name] = unknown_encodings
+
             except IndexError:
                 lock.acquire()
                 err_log.append("\tI wasn't able to locate any faces in image: {} ... Image will not be included in results".format(img_path))
                 lock.release()
                 return None
+
+        # Find the distances between every astronaut and every other astronaut
+        face_dist = self.custFaceDistance(unknown_locations)
 
         # For every file in the pickling directory
         for filename in os.listdir(self.astro_pickle_dir):
@@ -377,9 +395,6 @@ class Master_Model:
             # Find a list of deltas to the faces
             facailSimilarities = astro.faceDistance(unknown_encodings)
 
-            # Find the distances between every astronaut and every other astronaut
-            face_dist = self.custFaceDistance(unknown_locations)
-
             # Skip the face if no one matched
             if sum(found_arr) == 0 :
                 continue
@@ -394,7 +409,7 @@ class Master_Model:
 
         # Pickle the results without repeats
         pickle_obj = (img_name, self.deleteRepeats(img_entry))
-        makePickle("./Temp/",img_name,pickle_obj)
+        makePickle(self.cache_path,img_name,pickle_obj)
         sem.release()
 
     '''
@@ -451,7 +466,7 @@ class Master_Model:
         processes = []
         lock = mp.Lock()
         print("Looking for learned faces in all images in {0} using {1} threads".format(img_dir, self.num_threads))
-        prepDir("./Temp")
+        prepDir(self.cache_path)
 
         # Cycles through all filenames
         for filename in os.listdir(img_dir):
@@ -471,10 +486,11 @@ class Master_Model:
 
         # Load the results of all of the image processing
         self.unpickleResults()
-        print(self.found_faces)
         printErr("While processing the images the following errors occured:")
-        if not os.path.isdir("./img_cache") : os.mkdir("./img_cache")
-        with open("./img_cache/img_cache.dat","wb") as f:
+        if not os.path.isdir("{0}/{1}".format(self.parent_dir, img_dir)):
+            os.mkdir("{0}/{1}".format(self.parent_dir, img_dir))
+
+        with open(self.main_cache,"wb") as f:
             pickle.dump(self.img_cache,f)
 
         return self.found_faces
@@ -502,11 +518,11 @@ class Master_Model:
     OUTPUT: None
     '''
     def unpickleResults(self):
-        for filename in os.listdir("./Temp"):
-            with open("./Temp/"+filename,"rb") as f:
+        for filename in os.listdir(self.cache_path):
+            with open(self.cache_path + filename,"rb") as f:
                 result = pickle.load(f)
                 self.found_faces[result[0]] = [result[1]]
-        shutil.rmtree('./Temp')
+        # shutil.rmtree('../Data/Temp/Photo_Bin/')
 
     '''
     DESC:   Rotates points in a given image a certain number of times. This has
@@ -610,6 +626,8 @@ class Master_Model:
             index [n][n] of the outer list.
     '''
     def custFaceDistance(self, listOfAstroCoords):
+        if listOfAstroCoords == []: return []
+
         # Compute the area of each face
         faceArea = np.array([((x[2]-x[0])*x[3]-x[1]) for x in listOfAstroCoords])
         # Compute the average face area

@@ -93,7 +93,7 @@ INPUT:  file:str
 
 OUTPUT: None
 '''
-def scalePhoto(file:str, baseWidth:int = 128, savePath:str = './resized_photos'):
+def scalePhoto(file:str, baseWidth:int = 128, savePath:str = '../Data/Resized_Portraits'):
     savePath += '/resized_'
     name = file.split('&')[0].replace('_', ' ')
     im = Image.open(file)
@@ -112,7 +112,9 @@ INPUT:  path:str = 'resized_photos/'
 
 OUTPUT: A dictionary of astronauts and their respective images
 '''
-def assignPhotos(path:str = 'resized_photos/'):
+def assignPhotos(path:str = '../Data/Resized_Portraits/'):
+    if not os.path.exists(path): raise OSError('\"{0}\" does not exist'.format(path))
+
     img = {}
     files = [f for f in glob.glob(path + '*.jpg')] + [f for f in glob.glob(path + '*.jpeg')]
     for f in files:
@@ -133,7 +135,7 @@ INPUT:  sourceDir:str
 OUTPUT: Returns a dictionary where the keys are photo names and the values are
         lists of astronauts in the photo
 '''
-def loadPhotos(sourceDir:str = './dumpDir', verbose:bool = False):
+def loadPhotos(sourceDir:str = '../Data/Scan_Result', verbose:bool = False):
     photos = {}
 
     if verbose:
@@ -172,7 +174,7 @@ INPUT:  pfp:str = 'frequentpairs.json'
 
 OUTPUT: A list of frequent pairings
 '''
-def getFreqPairs(pfp:str = 'frequentpairs.json'):
+def getFreqPairs(pfp:str = '../Data/frequentpairs.json'):
     # Get data from file
     with open(pfp) as jsonfile:
         freqdata = json.load(jsonfile)
@@ -214,7 +216,9 @@ INPUT:  names:dict
 OUTPUT: None
 '''
 def graphData(names:dict, img:dict, pairs:dict, fp:dict = None, save:bool = True,
-              show:bool = False, ofp:str = "astronautrelations",):
+              show:bool = False, ofp:str = "../Data/Astronaut_Relations",):
+
+    # print(img)
 
     astronauts = nx.Graph()
     nodes = []
@@ -225,11 +229,16 @@ def graphData(names:dict, img:dict, pairs:dict, fp:dict = None, save:bool = True
     i = 0
     j = 0
 
+
+    # for country in list(names.keys()):
+    #     print(country, names[country])
+
     # Each centroid, diam, and color corresponds to a specific country
     CENTROIDS = [(200, 500), (100, 100), (500, 500), (500, 200), (125, 400),
-                 (550, 300), (390, 150), (525, 255), (300, 570), (400, 600),
-                 (365, 595)]
-    DIAMS = [45, 230, 130, 50, 20, 50, 50, 50, 50, 50, 50]
+                 (550, 300), (390, 150), (400, 255), (400, 570), (400, 600),
+                 (400, 595)]
+     # ['russia', 'usa', 'kazakhstan', 'greatbritain', 'japan', 'italy', 'netherlands', 'canada', 'brazil']
+    DIAMS = [130, 230, 20, 20, 50, 20, 20, 20, 20, 20, 20]
     COLORS = ['#cc0000', '#cc9900', '#009900', '#990099', '#6600ff', '#339966',
               '#663300', '#99cc00', '#727072', '#669999', '#993333']
 
@@ -295,7 +304,7 @@ def graphData(names:dict, img:dict, pairs:dict, fp:dict = None, save:bool = True
         i += 1
 
     # Saves the image
-    if save:
+    if save or show:
         if fp is not None:
             ofp += '_min'
 
@@ -303,7 +312,7 @@ def graphData(names:dict, img:dict, pairs:dict, fp:dict = None, save:bool = True
 
     # Workaround because plt.show() causes the program to crash
     if show:
-        img = Image.open(ofp)
+        img = Image.open(ofp + ".png")
         img.load()
         img.show()
 
@@ -322,7 +331,7 @@ INPUT:  photoPath:str = '../cropped_Astronaut_photos/'
 
 OUTPUT: None
 '''
-def generateGraph(photoPath:str = '../cropped_Astronaut_photos/',
+def generateGraph(photoPath:str = '../Data/Portraits_Cropped/',
                   save:bool = True, show:bool = True, limit:bool = False):
 
     # Find all of the stronaut names
