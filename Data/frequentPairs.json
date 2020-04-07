@@ -1,0 +1,2417 @@
+{
+    "('akihiko_hoshide&japan', 'michael_hopkins&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'akihiko_hoshide&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'akihiko_hoshide&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'akihiko_hoshide&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('akihiko_hoshide&japan', 'sergey_ryazansky&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('clayton_anderson&usa', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_dutton&usa', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('richard_mastracchio&usa', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('stephanie_wilson&usa', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_creamer&usa', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'alan_pointdexter&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_kaleri&russia', 'carl_walz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_kaleri&russia', 'pavel_vinogradov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('aleksandr_skvortsov&russia', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'clayton_anderson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'oleg_kotov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('richard_mastracchio&usa', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_creamer&usa', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aydyn_aimbetov&kazakhstan', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aydyn_aimbetov&kazakhstan', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aydyn_aimbetov&kazakhstan', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aydyn_aimbetov&kazakhstan', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aydyn_aimbetov&kazakhstan', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('daniel_burbank&usa', 'boris_morukov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('boris_morukov&russia', 'edward_lu&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'boris_morukov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_altman&usa', 'boris_morukov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('shannon_walker&usa', 'boris_morukov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('terrence_wilcutt&usa', 'boris_morukov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yuri_malenchenko&russia', 'boris_morukov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('clayton_anderson&usa', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_dutton&usa', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('richard_mastracchio&usa', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('stephanie_wilson&usa', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('timothy_creamer&usa', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'borothy_metcalf-lindenburger&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('carl_walz&usa', 'koichi_wakata&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('richard_garriott&usa', 'carl_walz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jeffrey_ashby&usa', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('chris_hadfield&canada', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('yuri_lonchakov&russia', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('christopher_cassidy&usa', 'edward_fincke&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('christopher_cassidy&usa', 'james_halsell&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('christopher_cassidy&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('christopher_cassidy&usa', 'pavel_vinogradov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('christopher_cassidy&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('christopher_cassidy&usa', 'vladimir_dezhurov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('christopher_ferguson&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 9.25
+    },
+    "('clayton_anderson&usa', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'clayton_anderson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('clayton_anderson&usa', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'clayton_anderson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'clayton_anderson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('clayton_anderson&usa', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('clayton_anderson&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_creamer&usa', 'clayton_anderson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('clayton_anderson&usa', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frederick_sturckow&usa', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('patrick_forrester&usa', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_horowitz&usa', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('susan_helms&usa', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('vladimir_dezhurov&russia', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('yury_usachev&russia', 'daniel_barry&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('daniel_burbank&usa', 'edward_lu&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('daniel_burbank&usa', 'richard_mastracchio&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_altman&usa', 'daniel_burbank&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('daniel_burbank&usa', 'shannon_walker&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('daniel_burbank&usa', 'terrence_wilcutt&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('daniel_burbank&usa', 'yuri_malenchenko&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('edward_fincke&usa', 'james_halsell&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('edward_fincke&usa', 'marcos_pontes&brazil')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('edward_fincke&usa', 'pavel_vinogradov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('edward_fincke&usa', 'sergey_volkov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('richard_mastracchio&usa', 'edward_lu&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('scott_altman&usa', 'edward_lu&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('shannon_walker&usa', 'edward_lu&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('terrence_wilcutt&usa', 'edward_lu&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yuri_malenchenko&russia', 'edward_lu&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('evgeny_tarelkin&russia', 'koichi_wakata&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('evgeny_tarelkin&russia', 'richard_garriott&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'patrick_forrester&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'vladimir_dezhurov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frank_culbertson&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('wendy_lawrence&usa', 'franklin_chang-diaz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('patrick_forrester&usa', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_horowitz&usa', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('susan_helms&usa', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('vladimir_dezhurov&russia', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('yury_usachev&russia', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('gennady_padalka&russia', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'koichi_wakata&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('gennady_padalka&russia', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'richard_garriott&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('gennady_padalka&russia', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'scott_kelly&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gregory_wiseman&usa', 'lee_morin&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_dutton&usa', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_dutton&usa', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_dutton&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_creamer&usa', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_dutton&usa', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'james_halsell&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_halsell&usa', 'pavel_vinogradov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('james_halsell&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_halsell&usa', 'vladimir_dezhurov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('jeffrey_ashby&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('marcos_pontes&brazil', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('patrick_forrester&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'sergey_volkov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('susan_helms&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('yuri_lonchakov&russia', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yury_usachev&russia', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('jeffrey_ashby&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'jeffrey_ashby&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jeffrey_ashby&usa', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jeffrey_ashby&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jeffrey_ashby&usa', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yuri_lonchakov&russia', 'jeffrey_ashby&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jeffrey_ashby&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('scott_kelly&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 9.25
+    },
+    "('john_phillips&usa', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'umberto_guidoni&italy')": {
+        "support": 0.05405405405405406,
+        "confidence": 1,
+        "lift": 9.25
+    },
+    "('yuri_lonchakov&russia', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'kenneth_ham&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'kenneth_ham&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'kenneth_ham&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'sergei_zalyotin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('kenneth_ham&usa', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'yuri_lonchakov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kent_rominger&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_garriott&usa', 'koichi_wakata&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('terry_virts&usa', 'koichi_wakata&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('michael_bloomfield&usa', 'luca_parmitano&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'maksim_surayev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('marcos_pontes&brazil', 'pavel_vinogradov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('marcos_pontes&brazil', 'sergey_volkov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'scott_kelly&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'michael_hopkins&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('oleg_kotov&russia', 'michael_hopkins&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('richard_mastracchio&usa', 'michael_hopkins&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('sergey_ryazansky&russia', 'michael_hopkins&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'oleg_kotov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'richard_mastracchio&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_korniyenko&russia', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('patrick_forrester&usa', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'sergey_ryazansky&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('stephanie_wilson&usa', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('timothy_creamer&usa', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'sergey_ryazansky&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_creamer&usa', 'oleg_kotov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('patrick_forrester&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('patrick_forrester&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('patrick_forrester&usa', 'vladimir_dezhurov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('patrick_forrester&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('pavel_vinogradov&russia', 'sergey_volkov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 12.333333333333332
+    },
+    "('terry_virts&usa', 'richard_garriott&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_altman&usa', 'richard_mastracchio&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'sergey_ryazansky&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'terrence_wilcutt&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'yuri_malenchenko&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('satoshi_furukawa&japan', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('timothy_peake&greatbritain', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'robert_behnken&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('thomas_jones&usa', 'robert_curbeam&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('scott_kelly&usa', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('satoshi_furukawa&japan', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('scott_altman&usa', 'shannon_walker&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_altman&usa', 'terrence_wilcutt&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_altman&usa', 'yuri_malenchenko&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_horowitz&usa', 'vladimir_dezhurov&russia')": {
+        "support": 0.05405405405405406,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('scott_kelly&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'scott_kelly&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('susan_helms&usa', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('umberto_guidoni&italy', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('yuri_lonchakov&russia', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yury_usachev&russia', 'scott_parazynski&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('sergey_prokopyev&russia', 'sergei_krikalev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('william_shepherd&usa', 'sergei_krikalev&russia')": {
+        "support": 0.05405405405405406,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('yuri_gidzenko&russia', 'sergei_krikalev&russia')": {
+        "support": 0.05405405405405406,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('william_shepherd&usa', 'sergey_prokopyev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('yuri_gidzenko&russia', 'sergey_prokopyev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('terrence_wilcutt&usa', 'shannon_walker&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('shannon_walker&usa', 'yuri_malenchenko&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('stephanie_wilson&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_creamer&usa', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yuri_lonchakov&russia', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yury_usachev&russia', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_creamer&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('terrence_wilcutt&usa', 'yuri_malenchenko&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_creamer&usa', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yuri_lonchakov&russia', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('william_mcarthur&usa', 'valery_tokarev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yuri_gidzenko&russia', 'william_shepherd&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('yuri_lonchakov&russia', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'oleg_kotov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'oleg_kotov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'clayton_anderson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'mikhail_korniyenko&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'naoko_yamazaki&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'oleg_kotov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'richard_mastracchio&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('borothy_metcalf-lindenburger&usa', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'clayton_anderson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'oleg_kotov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'richard_mastracchio&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'stephanie_wilson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('naoko_yamazaki&japan', 'tracy_caldwell-dyson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('oleg_kotov&russia', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'kenneth_ham&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'kenneth_ham&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'kenneth_ham&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'aydyn_aimbetov&kazakhstan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'shannon_walker&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yuri_malenchenko&russia', 'shannon_walker&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yuri_malenchenko&russia', 'terrence_wilcutt&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('evgeny_tarelkin&russia', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('evgeny_tarelkin&russia', 'carl_walz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('evgeny_tarelkin&russia', 'terry_virts&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'carl_walz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'terry_virts&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('terry_virts&usa', 'carl_walz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('chris_hadfield&canada', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('susan_helms&usa', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yury_usachev&russia', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'clayton_anderson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frederick_sturckow&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frederick_sturckow&usa', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frederick_sturckow&usa', 'patrick_forrester&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frederick_sturckow&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frederick_sturckow&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frederick_sturckow&usa', 'vladimir_dezhurov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('frederick_sturckow&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('scott_horowitz&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('vladimir_dezhurov&russia', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('mikhail_tyurin&russia', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('vladimir_dezhurov&russia', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('vladimir_dezhurov&russia', 'patrick_forrester&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('susan_helms&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('vladimir_dezhurov&russia', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yury_usachev&russia', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('vladimir_dezhurov&russia', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('vladimir_dezhurov&russia', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('edward_fincke&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('edward_fincke&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('edward_fincke&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('edward_fincke&usa', 'vladimir_dezhurov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('evgeny_tarelkin&russia', 'william_shepherd&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('evgeny_tarelkin&russia', 'yuri_gidzenko&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('gennady_padalka&russia', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('gennady_padalka&russia', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'james_dutton&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('vladimir_dezhurov&russia', 'james_halsell&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('susan_helms&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yury_usachev&russia', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_horowitz&usa', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_horowitz&usa', 'patrick_forrester&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'pavel_vinogradov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_horowitz&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('scott_horowitz&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'james_voss&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'scott_kelly&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('vladimir_dezhurov&russia', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('john_phillips&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'kenneth_ham&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'kenneth_ham&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('mikhail_tyurin&russia', 'richard_mastracchio&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('terry_virts&usa', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 18.5
+    },
+    "('timothy_peake&greatbritain', 'michael_lopez-alegria&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'satoshi_furukawa&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'takao_doi&japan')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('umberto_guidoni&italy', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('yury_usachev&russia', 'umberto_guidoni&italy')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'oleg_kotov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'richard_mastracchio&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('robert_behnken&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('robert_behnken&usa', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_hopkins&usa', 'richard_mastracchio&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_hopkins&usa', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('richard_mastracchio&usa', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('clayton_anderson&usa', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('tracy_caldwell-dyson&usa', 'mikhail_korniyenko&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('stephanie_wilson&usa', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'aleksandr_skvortsov&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('alan_pointdexter&usa', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('aleksandr_skvortsov&russia', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('robert_behnken&usa', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'jose_hernandez&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('jose_hernandez&usa', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'thomas_jones&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('kenneth_ham&usa', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_foale&usa', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('robert_behnken&usa', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_kelly&usa', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'gennady_padalka&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'timothy_peake&greatbritain')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('michael_lopez-alegria&usa', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('robert_behnken&usa', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('thomas_jones&usa', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('timothy_peake&greatbritain', 'michael_foale&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_parazynski&usa', 'chris_hadfield&canada')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('chris_hadfield&canada', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('chris_hadfield&canada', 'jeffrey_ashby&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_parazynski&usa', 'john_phillips&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('chris_hadfield&canada', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('chris_hadfield&canada', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('clayton_anderson&usa', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'frank_culbertson&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('daniel_barry&usa', 'frederick_sturckow&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('daniel_barry&usa', 'scott_horowitz&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'patrick_forrester&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('daniel_barry&usa', 'patrick_forrester&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('daniel_barry&usa', 'mikhail_tyurin&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('stephanie_wilson&usa', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('takao_doi&japan', 'timothy_creamer&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'jeffrey_ashby&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('james_voss&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'jeffrey_ashby&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_parazynski&usa', 'jeffrey_ashby&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('john_phillips&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_parazynski&usa', 'susan_helms&usa')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    },
+    "('scott_parazynski&usa', 'yury_usachev&russia')": {
+        "support": 0.02702702702702703,
+        "confidence": 1,
+        "lift": 37
+    }
+}
