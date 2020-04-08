@@ -94,15 +94,17 @@ INPUT:  file:str
 OUTPUT: None
 '''
 def scalePhoto(file:str, baseWidth:int = 128, savePath:str = '../Data/Resized_Portraits'):
-    savePath += '/resized_'
+    savePath += os.sep+'resized_'
+    print(file)
     name = file.split('&')[0].replace('_', ' ')
+    print(name)
     im = Image.open(file)
 
     wpercent = (baseWidth / float(im.size[0]))
     hsize = int((float(im.size[1]) * float(wpercent)))
 
     re = im.resize((baseWidth, hsize), PIL.Image.ANTIALIAS)
-    re.save(savePath + file.split('/')[-1])
+    re.save(savePath + file.split(os.sep)[-1])
 
 '''
 DESC:   Takes each photo and assigns it to a respective astronaut.
