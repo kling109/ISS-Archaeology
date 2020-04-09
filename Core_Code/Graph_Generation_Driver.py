@@ -391,4 +391,4 @@ def generateGraph(photoPath:str = '../Data/Portraits_Cropped/',
 
 
 if __name__ == '__main__':
-    generateGraph(limit = True)
+    generateGraph(limit = 1)

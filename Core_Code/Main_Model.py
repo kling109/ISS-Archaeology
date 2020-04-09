@@ -129,6 +129,7 @@ class Master_Model:
         self.num_threads = abs(num_threads)
         self.known_faces = self.itemizeKnown()
         self.found_faces = {}
+        self.found_faces_distance = {}
         self.img_cache = {}
         self.cache_path = self.input_cache + '/'
 
@@ -406,6 +407,7 @@ class Master_Model:
                     # Add astronauts to dictionary of people in the image
                     if found_arr[i] != 0:
                         img_entry[astro.filename].append((i,facailSimilarities[i], face_dist))
+                        print(img_entry)
 
         # Pickle the results without repeats
         pickle_obj = (img_name, self.deleteRepeats(img_entry))

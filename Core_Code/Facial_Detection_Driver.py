@@ -41,6 +41,7 @@ def getPhotoData(model:Main_Model, directory:str, recursive:bool):
     for f in findDir(directory, recursive):
         model.findFacesDir(f + "/")
         photos[f] = model.purgeResults()
+    print(photos)
     return photos
 
 '''
