@@ -3,6 +3,7 @@ import sqlite3
 from PIL import Image
 from Astro import Astronaut
 import io
+import numpy as np
 
 
 def create_database(con_string):
@@ -46,7 +47,7 @@ def create_database(con_string):
     conn.close()
 
 
-def insert_astro(conn: Connection, curs: Cursor, astro: Astronaut, headshot: Image):
+def insert_astro(conn: Connection, curs: Cursor, astro: Astronaut, headshot: Image, commit: bool = True):
     checkCountry = '''select * from Countries where Abr_Name like ?;'''
     checkAstro = '''select * from Astros where F_Name like ? and L_Name like ?;'''
 
@@ -70,15 +71,23 @@ def insert_astro(conn: Connection, curs: Cursor, astro: Astronaut, headshot: Ima
     else:
         print("{0} {1} is already in the database".format(astro.fName, astro.lName))
 
+    if commit:
+        conn.commit()
+
+def insert_astro_list(conn: Connection, curs: Cursor, astroList):
+    for astro, photo in astroList:
+        insert_astro(conn, curs, astro, photo, commit = False)
+
     conn.commit()
 
 
-def get_headshot(curs: Cursor, fname: str, lname: str):
+
+def get_headshot(curs: Cursor, astro: Astronaut):
     getAstro = '''select Headshot from Astros where F_Name like ? and L_Name like ?;'''
 
-    res = curs.execute(getAstro, (fname, lname,)).fetchone()
+    res = curs.execute(getAstro, (astro.fName, astro.lName,)).fetchone()
     if(res == None):
-        print("{0} {1} is not in the database".format(fname, lname))
+        print("{0} {1} is not in the database".format(astro.fName, astro.lName))
         return None
 
     stream = io.BytesIO(res[0])
@@ -86,6 +95,41 @@ def get_headshot(curs: Cursor, fname: str, lname: str):
     stream.close()
     return image
 
+def update_facial_data(conn: Connection, curs: Cursor, astro: Astronaut):
+    updateAstro = '''update Astros
+    set Facial_Encoding = ?
+    where F_Name like ? and L_Name like ?;'''
+
+    checkAstro = '''select * from Astros where F_Name like ? and L_Name like ?;'''
+
+    if(curs.execute(checkAstro, (astro.fName, astro.lName,)).fetchone() == None):
+        print("{0} {1} is not in the database".format(astro.fName, astro.lName))
+    else:
+        fd = astro.facialData.tobytes()
+        curs.execute(updateAstro, (fd, astro.fName, astro.lName,))
+        conn.commit()
+
+
+
+def get_astros_from_database(curs: Cursor):
+    getAstros = '''select Country, F_Name, L_Name, Facial_Encoding
+    from Astros;'''
+
+    res = curs.execute(getAstros).fetchall()
+    if(res == None):
+        print("There were no astronauts in the database")
+        return None
+
+    astros = []
+    for r in res:
+        if r[3] is not None:
+            fd = np.frombuffer(r[3])
+        else:
+            fd = None
+
+        astros.append(Astronaut(r[0], r[1], r[2], fData=fd))
+
+    return astros
 
 def connect(con_string: str):
     conn = sqlite3.connect(con_string)

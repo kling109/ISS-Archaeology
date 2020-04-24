@@ -16,13 +16,13 @@ class Astronaut:
 
     OUTPUT: None
     '''
-    def __init__(self, country: str, fName : str, lName : str, mName  = ""):
+    def __init__(self, country: str, fName : str, lName : str, mName: str  = "", fData = None):
         self.fName = fName
         self.lName = lName
         self.mName = mName
         self.country = country
-        self.facialData = None
-        # self.filename = "{0}_{1}&{2}".format(fName, lName, country)
+        self.facialData = fData
+        self.filename = "{0}_{1}&{2}".format(fName, lName, country)
 
     '''
     DESC:   Trains the face encodings based on a file, provided by a filepath
@@ -48,12 +48,8 @@ class Astronaut:
            and defaulted to ""
     Output: None
     '''
-    def saveData(self, filePath = ""):
-        tempDict = {}
-        tempDict[self.filename] = self.facialData
-        with open("{0}{1}.dat".format(filePath, self.filename), 'wb') as f:
-            pickle.dump(tempDict, f)
-            f.close()
+    def saveData(self):
+        update_facial_data(self)
 
     '''
     DESC:   Loads the astronaut's information from a binary file provided the filepath
@@ -62,12 +58,8 @@ class Astronaut:
             and defaulted to ""
     OUTPUT: None
     '''
-    def loadData(self, filePath = ""):
-        tempDict = {}
-        with open("{0}{1}.dat".format(filePath, self.filename), 'rb') as f:
-           tempDict = pickle.load(f)
-           f.close()
-        self.facialData = tempDict[self.filename]
+    def loadData(self):
+        raise DeprecationWarning('This should be replaced by database function')
 
     '''
     DESC:   Searches for matches when given a list of astronaut facial encodings from a photo
@@ -96,3 +88,10 @@ class Astronaut:
         for face in listOfAstronauts:
             FoundAstronauts.append(face_recognition.face_distance([self.facialData], face)[0])
         return FoundAstronauts
+
+    def __str__(self):
+        if(self.facialData is None):
+            fd = "No facial data"
+        else:
+            fd = "Facial data loaded"
+        return "{0} {1} ({2}), {3}, {4}.jpg".format(self.fName,self.lName, self.country, fd, self.filename)
