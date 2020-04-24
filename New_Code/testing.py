@@ -1,23 +1,17 @@
-import Initialize_Db as idb
+from sqlite3 import Connection, Cursor
+import sqlite3
 from PIL import Image
 from Astro import Astronaut
+import io
 import numpy as np
+import os
+from DB_Handler import Astro_Handler
 
-conn, c = idb.connect('Astro.sqlite')
 
-# astro_im = Image.open("test.jpg")
-astro = Astronaut('usa', 'matt', 'raymond')
-# idb.insert_astro(conn, c, astro, astro_im)
-astro.facialData = np.array([1.0, 2.0, 3.0, 4.0])
-idb.update_facial_data(conn, c, astro)
+ah = Astro_Handler('Astro.sqlite')
 
-# lst = [[Astronaut('usa', 'james', 'cameron'),astro_im],
-#        [Astronaut('rus', 'bill', 'deblasio'),astro_im]]
-# idb.insert_astro_list(conn, c, lst)
+a = Astronaut('usa', 'matt', 'raymond')
+print(a)
 
-# astro_im = idb.get_headshot(c, astro.fName, astro.lName);
-for k in idb.get_astros_from_database(c):
-    print(k.facialData)
-# astro_im.show()
-
-idb.disconnect(conn)
+ah.get_headshot(a)
+print(a)
