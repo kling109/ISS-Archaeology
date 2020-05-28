@@ -75,7 +75,7 @@ def generateTransactions(photos:dict, verbose:bool = False):
     for k in photos.keys():
         # if verbose: print('\t{0}'.format(k))
         # Grabs the lists of astronauts in each photo
-        transactions += [[k2 for k2 in list] for list in photos[k]]
+        transactions += [[k2 for k2 in li] for li in photos[k]]
         if verbose: bar.update()
 
     if verbose: bar.update(True)
